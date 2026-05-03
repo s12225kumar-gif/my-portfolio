@@ -76,6 +76,21 @@ h2 {
   border-radius: 12px;
   flex: 1 1 250px;
 }
+.repo-link {
+  display: inline-block;
+  margin-top: 0.8rem;
+  color: #ffffff;
+  background-color: #3a86ff;
+  padding: 0.4rem 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background-color 0.3s;
+}
+
+.repo-link:hover {
+  background-color: #2667cc;
+}
 
 .tech {
   display: inline-block;
