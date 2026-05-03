@@ -77,7 +77,7 @@ const skillsCtx = skillsCanvas.getContext('2d');
 // Your skills (name and percentage)
 const skillsData = [
   { name: 'Python', level: 80 },
-  { name: 'C++', level: 65 },
+  { name: 'C', level: 65 },
   { name: 'HTML/CSS', level: 85 },
   { name: 'JavaScript', level: 75 },
 ];
