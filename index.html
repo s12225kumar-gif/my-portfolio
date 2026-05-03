@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sumit Kumar-Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Canvas used as an animated background -->
+  <canvas id="bgCanvas"></canvas>
+
+  <!-- Main content overlays the canvas -->
+  <div class="content">
+    <header class="hero">
+      <h1>Sumit Kumar</h1>
+      <p class="tagline">BTech Electronics and Communication | Aspiring Developer</p>
+    </header>
+
+    <section class="about">
+      <h2>About Me</h2>
+      <p>
+        I am a first-year BTech student passionate about web development,robotics and problem-solving. 
+        I enjoy building clean, responsive gadgets and learning new technologies.
+      </p>
+    </section>
+
+    <section class="skills">
+      <h2>Skills</h2>
+      <!-- Canvas for skills progress bars (drawn with JS) -->
+      <canvas id="skillsCanvas" width="400" height="200"></canvas>
+    </section>
+
+    <section class="projects">
+      <h2>Projects</h2>
+      <div class="project-grid">
+        <div class="project-card">
+          <h3>Portfolio Website</h3>
+          <p>Personal portfolio built with HTML, CSS, JS, and Canvas.</p>
+          <span class="tech">HTML · CSS · JavaScript</span>
+        </div>
+        <div class="project-card">
+          <h3>Todo App</h3>
+          <p>A simple todo list with local storage support.</p>
+          <span class="tech">React · JavaScript · CSS</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact">
+      <h2>Contact</h2>
+      <p>Email: your.email@example.com</p>
+      <p>LinkedIn: linkedin.com/in/yourprofile</p>
+      <p>GitHub: github.com/yourusername</p>
+    </section>
+
+    <footer>
+      <p>© 2025 Sumit Kumar</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
