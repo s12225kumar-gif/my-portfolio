@@ -3,61 +3,93 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sumit Kumar-Portfolio</title>
+  <title>Your Name | Portfolio</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Canvas used as an animated background -->
+  <!-- Canvas background -->
   <canvas id="bgCanvas"></canvas>
 
-  <!-- Main content overlays the canvas -->
-  <div class="content">
+  <!-- Main content overlay -->
+  <div class="container">
+    <!-- Hero / Header -->
     <header class="hero">
-      <h1>Sumit Kumar</h1>
-      <p class="tagline">BTech Electronics and Communication | Aspiring Developer</p>
+      <h1>Your Name</h1>
+      <p class="subtitle">BTech Computer Science | Aspiring Developer</p>
+      <div class="social-links">
+        <a href="mailto:your.email@gmail.com">📧 Email</a>
+        <a href="https://github.com/s12225kumar-gif" target="_blank">🐙 GitHub</a>
+        <a href="https://linkedin.com/in/yourprofile" target="_blank">💼 LinkedIn</a>
+      </div>
     </header>
 
-    <section class="about">
+    <!-- About Section -->
+    <section class="card" id="about">
       <h2>About Me</h2>
-      <p>
-        I am a first-year BTech student passionate about web development,robotics and problem-solving. 
-        I enjoy building clean, responsive gadgets and learning new technologies.
-      </p>
+      <p>I'm a passionate tech student exploring web development, algorithms, and problem-solving. I enjoy building clean, user-friendly interfaces and contributing to open-source projects. This portfolio is built with HTML, CSS, and a self-animated Canvas background.</p>
     </section>
 
-    <section class="skills">
+    <!-- Skills Section -->
+    <section class="card" id="skills">
       <h2>Skills</h2>
-      <!-- Canvas for skills progress bars (drawn with JS) -->
-      <canvas id="skillsCanvas" width="400" height="200"></canvas>
+      <div class="skill-bar">
+        <span>Python</span>
+        <div class="bar"><div class="fill" style="width:85%"></div></div>
+      </div>
+      <div class="skill-bar">
+        <span>JavaScript</span>
+        <div class="bar"><div class="fill" style="width:75%"></div></div>
+      </div>
+      <div class="skill-bar">
+        <span>HTML/CSS</span>
+        <div class="bar"><div class="fill" style="width:90%"></div></div>
+      </div>
+      <div class="skill-bar">
+        <span>C++</span>
+        <div class="bar"><div class="fill" style="width:70%"></div></div>
+      </div>
+      <div class="skill-bar">
+        <span>Git & GitHub</span>
+        <div class="bar"><div class="fill" style="width:80%"></div></div>
+      </div>
     </section>
 
-    <section class="projects">
+    <!-- Projects Section -->
+    <section class="card" id="projects">
       <h2>Projects</h2>
       <div class="project-grid">
         <div class="project-card">
-          <h3>Portfolio Website</h3>
-          <p>Personal portfolio built with HTML, CSS, JS, and Canvas.</p>
-          <span class="tech">HTML · CSS · JavaScript</span>
+          <h3>Canvas Portfolio</h3>
+          <p>This very portfolio site with animated constellation background and glassmorphism design.</p>
+          <span class="tech-tag">HTML · CSS · JavaScript · Canvas</span>
+          <a href="https://github.com/s12225kumar-gif/my-portfolio" target="_blank" class="btn">View on GitHub</a>
         </div>
         <div class="project-card">
-          <h3>Attendify</h3>
-          <p>An attendance app developed for ideathon.</p>
-          <span class="tech">React · JavaScript · CSS</span>
-           <br>
-  <a href="https://github.com/s12225kumar-gif/attendify.git" target="_blank" class="repo-link">View on GitHub</a>
+          <h3>Todo App</h3>
+          <p>A clean task manager with local storage, built using React and styled components.</p>
+          <span class="tech-tag">React · JavaScript · CSS</span>
+          <a href="#" target="_blank" class="btn">View on GitHub</a>
+        </div>
+        <div class="project-card">
+          <h3>Weather App</h3>
+          <p>Fetches live weather data using OpenWeather API with a simple, responsive UI.</p>
+          <span class="tech-tag">JavaScript · API · HTML/CSS</span>
+          <a href="#" target="_blank" class="btn">View on GitHub</a>
         </div>
       </div>
     </section>
 
-    <section class="contact">
+    <!-- Contact Section -->
+    <section class="card" id="contact">
       <h2>Contact</h2>
-      <p>Email: <a href="mailto:s12225kumar@gmail.com">s12225kumar@gmail.com</a></p>
-      <p>LinkedIn: linkedin.com/in/yourprofile</p>
-      <p>GitHub: <a href="https://github.com/s12225kumar-gif/attendify" target="_blank"> github.com/s12225kumar-gif</a></p>
+      <p>I'm always open to collaboration and new opportunities. Reach out!</p>
+      <p>📧 <a href="mailto:your.email@gmail.com">your.email@gmail.com</a></p>
+      <p>🐙 <a href="https://github.com/s12225kumar-gif" target="_blank">github.com/s12225kumar-gif</a></p>
+      <p>💼 <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></p>
     </section>
 
     <footer>
-      <p>© 2025 Sumit Kumar</p>
+      <p>© 2025 Your Name. Built with 💙 and Coffee.</p>
     </footer>
   </div>
 
