@@ -1,41 +1,48 @@
 const canvas = document.getElementById('bgCanvas');
 const ctx = canvas.getContext('2d');
 let width, height;
+let stars = [];
 
 function resize() {
   width = window.innerWidth;
   height = window.innerHeight;
   canvas.width = width;
   canvas.height = height;
+  initStars();
 }
 window.addEventListener('resize', resize);
-resize();
 
-let offset = 0;
+function initStars() {
+  const count = 200;
+  stars = [];
+  for (let i = 0; i < count; i++) {
+    stars.push({
+      x: Math.random() * width,
+      y: Math.random() * height,
+      radius: Math.random() * 2.5 + 0.5,
+      speed: Math.random() * 0.5 + 0.2,
+      opacity: Math.random() * 0.8 + 0.2,
+    });
+  }
+}
+
+resize();
 
 function draw() {
   ctx.clearRect(0, 0, width, height);
-  ctx.strokeStyle = '#45A29E';
-  ctx.lineWidth = 0.5;
-
-  const spacing = 40;
-  // moving horizontal lines
-  for (let y = -spacing + (offset % spacing); y < height + spacing; y += spacing) {
+  stars.forEach(s => {
+    // move down slowly
+    s.y += s.speed;
+    if (s.y > height) {
+      s.y = 0;
+      s.x = Math.random() * width;
+    }
+    // draw star
     ctx.beginPath();
-    ctx.moveTo(0, y);
-    ctx.lineTo(width, y + 30); // slanted
-    ctx.strokeStyle = `rgba(69, 162, 158, 0.2)`;
-    ctx.stroke();
-  }
-  // vertical lines
-  for (let x = -spacing + (offset % spacing); x < width + spacing; x += spacing) {
-    ctx.beginPath();
-    ctx.moveTo(x, 0);
-    ctx.lineTo(x - 15, height);
-    ctx.strokeStyle = `rgba(69, 162, 158, 0.15)`;
-    ctx.stroke();
-  }
-  offset += 0.3;
+    ctx.arc(s.x, s.y, s.radius, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(255, 255, 255, ${s.opacity})`;
+    ctx.fill();
+  });
   requestAnimationFrame(draw);
 }
 
