@@ -5,6 +5,7 @@
 }
 
 body {
+  background: linear-gradient(135deg, #0B0C10 0%, #1F2833 100%);
   font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
   color: #ffffff;
   background: #0B0C10;
