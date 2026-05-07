@@ -1,3 +1,4 @@
+/* Reset and base */
 * {
   margin: 0;
   padding: 0;
@@ -5,42 +6,39 @@
 }
 
 body {
-  background: linear-gradient(135deg, #0B0C10 0%, #1F2833 100%);
-  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-  color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #fff;
   overflow-x: hidden;
 }
 
+/* Canvas background: fixed, full screen, behind everything */
 #bgCanvas {
   position: fixed;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   z-index: -1;
-  background: #0B0C10;
+  background: #0a0f1e; /* fallback dark color */
 }
 
-.container {
+/* Content wrapper */
+.content {
   position: relative;
+  z-index: 1;
   max-width: 900px;
   margin: 0 auto;
-  padding: 2rem 1.5rem;
+  padding: 2rem;
 }
 
-/* Glassmorphism card style */
-.card, .hero {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(15px);
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+/* Glass-morphism style for sections */
+section, .hero, footer {
+  background: rgba(10, 15, 30, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
   padding: 2rem;
   margin: 2rem 0;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.card:hover, .hero:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .hero {
@@ -49,140 +47,53 @@ body {
 }
 
 .hero h1 {
-  font-size: 3.5rem;
-  background: linear-gradient(135deg, #45A29E, #66FCF1);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-size: 3rem;
   margin-bottom: 0.5rem;
 }
 
-.subtitle {
-  font-size: 1.3rem;
-  color: #C5C6C7;
-  margin-bottom: 1.5rem;
-}
-
-.social-links a {
-  display: inline-block;
-  margin: 0 10px;
-  color: #45A29E;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.2s;
-}
-
-.social-links a:hover {
-  color: #66FCF1;
+.tagline {
+  font-size: 1.2rem;
+  color: #a0c4ff;
 }
 
 h2 {
-  font-size: 2.2rem;
-  color: #45A29E;
+  font-size: 2rem;
   margin-bottom: 1rem;
+  border-bottom: 2px solid #3a86ff;
   display: inline-block;
-  border-bottom: 3px solid #45A29E;
-  padding-bottom: 0.2rem;
+  padding-bottom: 0.3rem;
 }
 
-p {
-  line-height: 1.6;
-  color: #C5C6C7;
-}
-
-/* Skill bars */
-.skill-bar {
+.project-grid {
   display: flex;
-  align-items: center;
-  margin: 1rem 0;
+  gap: 1.5rem;
   flex-wrap: wrap;
 }
 
-.skill-bar span {
-  width: 100px;
-  font-weight: 600;
-  color: #fff;
-}
-
-.bar {
-  flex: 1;
-  height: 12px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 20px;
-  margin-left: 1rem;
-  overflow: hidden;
-}
-
-.fill {
-  height: 100%;
-  background: linear-gradient(90deg, #45A29E, #66FCF1);
-  border-radius: 20px;
-  width: 0%; /* set inline style for width */
-  transition: width 1.5s ease;
-}
-
-/* Project cards */
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 1.5rem;
-  margin-top: 1.5rem;
-}
-
 .project-card {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 15px;
-  padding: 1.5rem;
-  transition: background 0.3s, transform 0.3s;
-}
-
-.project-card:hover {
   background: rgba(255, 255, 255, 0.1);
-  transform: translateY(-3px);
+  padding: 1.2rem;
+  border-radius: 12px;
+  flex: 1 1 250px;
 }
 
-.project-card h3 {
-  color: #fff;
-  margin-bottom: 0.5rem;
-}
-
-.tech-tag {
-  display: block;
-  margin: 0.8rem 0;
-  font-size: 0.85rem;
-  color: #66FCF1;
-}
-
-.btn {
+.tech {
   display: inline-block;
-  margin-top: 0.5rem;
-  padding: 0.4rem 1rem;
-  background: #45A29E;
-  color: #0B0C10;
-  font-weight: 600;
-  border-radius: 6px;
-  text-decoration: none;
-  transition: background 0.3s, transform 0.2s;
-}
-
-.btn:hover {
-  background: #66FCF1;
-  transform: scale(1.03);
-}
-
-/* Contact links */
-#contact a {
-  color: #45A29E;
-  text-decoration: none;
-}
-
-#contact a:hover {
-  color: #66FCF1;
+  margin-top: 0.8rem;
+  font-size: 0.85rem;
+  color: #ffb703;
 }
 
 footer {
   text-align: center;
-  color: #666;
-  margin-top: 3rem;
   font-size: 0.9rem;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+/* Make the skills canvas background transparent */
+#skillsCanvas {
+  background: transparent;
+  display: block;
+  margin: 0 auto;
 }
